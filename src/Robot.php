@@ -2,23 +2,24 @@
 namespace App;
 
 require_once ('src/Config.php');
+require_once ('src/RobotBattery.php');
 
 use App\Config;
+use App\RobotBattery;
 use InvalidArgumentException;
 
-class Robot
+/* 
+* Class Robot
+* Class for Robot functionality 
+*/
+class Robot extends RobotBattery
 {
-    public $battery = Config::BATTERY_LIFE;
-
-    public function charge_battery()
-    {
-        $this->battery = Config::BATTERY_LIFE;
-        echo "\n Battery charging started....";
-        SLEEP(Config::BATTERY_CHARGING_TIME);
-        echo "\n Battery charging completed";
-        return;
-    }
-
+    public $task;
+    
+    /**
+    * Function to validate area  
+    * @return void
+    */
     protected function checkValidArea(int $area):void
         {
             if (empty($area) || !is_numeric($area))

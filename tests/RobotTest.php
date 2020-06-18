@@ -12,7 +12,8 @@ class IndexTest extends TestCase
   public function testInvalidArgumentType(): void
   {
     $this->expectException(TypeError::class);
-    cleanFloor('testthis');
+    $cleanFloor = cleanFloor('testthis');
+    $this->assertEquals(false, $cleanFloor);
   }
 
   /**
@@ -26,8 +27,10 @@ class IndexTest extends TestCase
       "--floor=carpet",
       "--area=70"
     ];
-    $this->expectException(InvalidArgumentException::class);
-    cleanFloor($arrArgs);
+    
+    $cleanFloor = cleanFloor($arrArgs);
+    $this->assertEquals(false, $cleanFloor);
+
   }
 
   /**
@@ -39,8 +42,8 @@ class IndexTest extends TestCase
       "robot.php",
       "clean"
     ];
-    $this->expectException(InvalidArgumentException::class);
-    cleanFloor($arrArgs);
+    $cleanFloor = cleanFloor($arrArgs);
+    $this->assertEquals(false, $cleanFloor);
   }
 
   /**
@@ -54,8 +57,8 @@ class IndexTest extends TestCase
       "--floor=carpets",
       "--area=70"
     ];
-    $this->expectException(InvalidArgumentException::class);
-    cleanFloor($arrArgs);
+    $cleanFloor = cleanFloor($arrArgs);
+    $this->assertEquals(false, $cleanFloor);
   }
 
   /**
@@ -69,7 +72,7 @@ class IndexTest extends TestCase
       "--floor=carpets",
       "--area=70s"
     ];
-    $this->expectException(InvalidArgumentException::class);
-    cleanFloor($arrArgs);
+    $cleanFloor = cleanFloor($arrArgs);
+    $this->assertEquals(false, $cleanFloor);
   }
 }

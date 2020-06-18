@@ -2,7 +2,10 @@
 
 namespace App;
 
-//Interface for robot cleaning
+/* 
+* Interface CleanFloorInterface
+* Interface for robot cleaning
+*/
 interface CleanFloorInterface
 {
   public function clean();

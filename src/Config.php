@@ -2,6 +2,10 @@
 
 namespace App;
 
+/* 
+* Class Config
+* Class for storing config
+*/
 class Config
 {
 
