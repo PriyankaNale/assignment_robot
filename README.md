@@ -11,8 +11,7 @@
  Test cases
  Test case run command: "composer test"
  
- 
-  Sample output for cleaning:
+Sample output for cleaning:
  /******************Result for hard surface cleaning*************/
 
  Hard floor clening started::
@@ -80,3 +79,5 @@ Robot Cleaning Hard area
  Battery Power :85
  Battery time :51
  Hard floor cleaning completed
+
+ 
