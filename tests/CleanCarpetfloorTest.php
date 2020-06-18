@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
-use App\CleanCarpetfloor;
+use src\CleanCarpetfloor;
 
 class CleanCarpetfloorTest extends TestCase
 {

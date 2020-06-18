@@ -6,14 +6,14 @@ require_once('robot.php');
 
 use PHPUnit\Framework\TestCase;
 
-class IndexTest extends TestCase
+class RobotsrcTest extends TestCase
 {
 
   public function testInvalidArgumentType(): void
   {
     $this->expectException(TypeError::class);
     $cleanFloor = cleanFloor('testthis');
-    $this->assertEquals(false, $cleanFloor);
+    // $this->assertEquals(false, $cleanFloor);
   }
 
   /**

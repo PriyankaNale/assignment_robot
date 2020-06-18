@@ -1,11 +1,12 @@
 <?php
 
-namespace App;
+namespace src;
 
 /* 
 * Class Config
 * Class for storing config
 */
+
 class Config
 {
 
