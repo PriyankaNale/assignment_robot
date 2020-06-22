@@ -37,11 +37,11 @@ class CleanHardFloor extends Robot implements CleanFloorInterface
      */
     public function clean(): bool
     {
-        echo "\n Hard floor clening started::";
+        echo "\n Hard floor cleaning started::";
         while ($this->area > 0) {
             if ($this->battery > 0) //Check if battery available
             {
-                echo "\n Robot Cleaning Hard area ";
+                echo "\n\n Robot Cleaning Hard area ";
                 echo "\n Area remaining :$this->area";
                 echo "\n Battery power :" . round($this->battery_power);
                 echo "\n Battery time :$this->battery ";

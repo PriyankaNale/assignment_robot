@@ -22,13 +22,14 @@ class RobotBattery extends RobotBatteryPower
     {
         $this->task = 'Charging';
         $this->battery = Config::BATTERY_LIFE;
-        echo "\n ------------Battery charging started-----------";
+        echo "\n\n ------------Battery charging started-----------";
+        echo "\n Charging";
 
         SLEEP(Config::BATTERY_CHARGING_TIME);
 
         $this->set_power();
 
-        echo "\n ------------Battery charging completed----------";
+        echo "\n\n ------------Battery charging completed----------";
         return true;
     }
 }

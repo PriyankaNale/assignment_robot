@@ -5,56 +5,46 @@
 // side effect: change ini settings
 ini_set('error_reporting', E_ALL);
 
-include_once 'includes/autoload.php';
+//Autoload required classes
+spl_autoload_register();
 
 use src\CleanHardFloor;
 use src\CleanCarpetfloor;
 use src\Config;
 
 
+// Get command line arguments
+$options = getopt(" clean:", ["floor:","area:"]);
+cleanFloor($options);
 
-#Run cleaning process
-if (isset($argv)) {
-    cleanFloor($argv);
-}
 
 /**
  * Function for cleaning floor  
  * @return boolean 
  */
-function cleanFloor(array $argv): bool
+function cleanFloor(array $options): bool
 {
     $floor = "";
     $area  = 0;
 
-    if (empty($argv)) {
+    if (empty($options)) {
         echo 'Invalid arguments';
         return false;
-    }
-    if (
-        empty($argv['1']) ||
-        (!empty($argv['1']) && $argv['1'] != Config::ROBOT_TASK)
-    ) {
+    }   
+  
 
-        echo 'Invalid command';
-        return false;
-    }
-
-    if (empty($argv['2']) || empty($argv['3'])) {
+    if (empty($options['floor']) || empty($options['area'])) {
 
         echo 'Invalid parameters passed';
         return false;
     }
 
-    $floor = explode("=", $argv['2'])[1];
-    $area  = explode("=", $argv['3'])[1];
+    $floor = $options['floor'];
+    $area  = $options['area'];
 
     if (empty($area) || !is_numeric($area)) {
 
-        sprintf(
-            '"%s" is not a valid area',
-            $area
-        );
+        echo("$area is not valid");
         return false;
     }
 
@@ -68,10 +58,8 @@ function cleanFloor(array $argv): bool
 
         return $carpet_floor->clean();
     } else {
-        sprintf(
-            '"%s" is not a valid floor',
-            $floor
-        );
+       
+        echo("$floor is not valid");
 
         return false;
     }

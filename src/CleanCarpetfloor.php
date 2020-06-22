@@ -39,7 +39,7 @@ class CleanCarpetfloor extends Robot implements CleanFloorInterface
         echo "\n Carpet floor cleaning started::";
         while ($this->area > 0) {
             if ($this->battery > 0) {
-                echo "\n Robot Cleaning Carpet area ";
+                echo "\n\n Robot Cleaning Carpet area ";
                 echo "\n Area remaining :$this->area";
                 echo "\n Battery power :" . round($this->battery_power);
                 echo "\n Battery time :$this->battery ";
