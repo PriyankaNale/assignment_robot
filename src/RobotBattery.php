@@ -12,7 +12,7 @@ use src\RobotBatteryPower;
 
 class RobotBattery extends RobotBatteryPower
 {
-    public $battery = Config::BATTERY_LIFE;
+    protected $battery = Config::BATTERY_LIFE;
 
     /**
      * Function for Robot charge   
