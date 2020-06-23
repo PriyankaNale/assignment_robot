@@ -12,7 +12,7 @@ use src\CleanFloorInterface;
 
 class CleanCarpetfloor extends Robot implements CleanFloorInterface
 {
-    public $area;
+    private $area;
 
     /**
      * Class constructor. 
