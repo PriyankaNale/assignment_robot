@@ -8,7 +8,7 @@ namespace src;
 
 class RobotBatteryPower
 {
-    public $battery_power  = 100;
+    protected $battery_power  = 100;
 
     /**
      * Function to set battery power  
