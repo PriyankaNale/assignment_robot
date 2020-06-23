@@ -13,7 +13,7 @@ use InvalidArgumentException;
 
 class Robot extends RobotBattery
 {
-    public $task;
+    protected $task;
 
     /**
      * Function to validate area  
